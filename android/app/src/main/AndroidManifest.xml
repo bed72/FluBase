@@ -1,0 +1,35 @@
+<manifest 
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <application
+        android:label="ohh_ferta"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher" >
+
+        <activity
+            android:exported="true"
+            android:name=".MainActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode" >
+           
+            <meta-data
+              android:resource="@style/NormalTheme" 
+              android:name="io.flutter.embedding.android.NormalTheme" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+    
+        <meta-data
+            android:value="2" 
+            android:name="flutterEmbedding" />
+
+    </application>
+    
+</manifest>
