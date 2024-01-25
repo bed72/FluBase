@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:signals/signals_flutter.dart';
 
 import 'package:ohh_ferta/src/common/widgets/failure_widget.dart';
-import 'package:ohh_ferta/src/common/widgets/scaffold_state_widget.dart';
 import 'package:ohh_ferta/src/common/widgets/circular_progress_widget.dart';
 
-import 'package:ohh_ferta/src/modules/offers/domain/entities/offers/offers_entity.dart';
+import 'package:ohh_ferta/src/modules/offers/domain/entities/offers_entity.dart';
 
-import 'package:ohh_ferta/src/modules/offers/presentation/screens/home/offers/offers_state.dart';
+import 'package:ohh_ferta/src/modules/offers/presentation/offers/offers_state.dart';
 
 class OffersScreen extends StatefulWidget {
   final OffersState state;
@@ -29,12 +28,14 @@ class _OffersScreenState extends State<OffersScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return ScaffoldStateWidget(
-      child: Watch(
-        (_) => widget.state.offers.value.map(
-          loading: () => const CircularProgressWidget(),
-          error: (Object error, _) => FailureWidget(error: error),
-          data: (List<OfferEntity> offers) => _offersWidget(offers),
+    return Scaffold(
+      body: SafeArea(
+        child: Watch(
+          (_) => widget.state.offers.value.map(
+            loading: () => const CircularProgressWidget(),
+            error: (Object error, _) => FailureWidget(error: error),
+            data: (List<OfferEntity> offers) => _offersWidget(offers),
+          ),
         ),
       ),
     );
@@ -50,9 +51,8 @@ class _OffersScreenState extends State<OffersScreen> {
             title: Text(offer.name),
             subtitle: Text('R\$ ${offer.price}'),
             trailing: Text('válido até: ${offer.formatData}'),
-            leading: CircleAvatar(
-              backgroundImage: NetworkImage(offer.formatThumb),
-            ),
+            leading:
+                CircleAvatar(backgroundImage: NetworkImage(offer.formatThumb)),
           );
         },
       );

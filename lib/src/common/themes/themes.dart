@@ -8,7 +8,7 @@ class Themes {
   static get systemWidgets => const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark,
-        systemNavigationBarColor: Color(0xFFFBFDF7),
+        systemNavigationBarColor: Color(0xFFFBFDF7), //Color(0x19006D39),
         systemNavigationBarIconBrightness: Brightness.dark,
       );
 
@@ -17,6 +17,8 @@ class Themes {
         colorScheme: colors,
         fontFamily: 'Poppins',
         brightness: Brightness.light,
+        highlightColor: Colors.transparent,
+        splashFactory: NoSplash.splashFactory,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       );
 }

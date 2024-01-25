@@ -1,8 +1,8 @@
 import 'package:signals/signals_flutter.dart';
 
-import 'package:ohh_ferta/src/modules/offers/domain/entities/offers/offers_entity.dart';
+import 'package:ohh_ferta/src/modules/offers/domain/entities/offers_entity.dart';
 
-import 'package:ohh_ferta/src/modules/offers/domain/usecases/offers/get_all_offers_use_case.dart';
+import 'package:ohh_ferta/src/modules/offers/domain/usecases/get_all_offers_use_case.dart';
 
 class OffersState {
   final GetAllOffersUseCase _useCase;

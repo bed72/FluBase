@@ -6,9 +6,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:ohh_ferta/src/common/themes/themes.dart';
 
 class ApplicationWidget extends StatelessWidget {
-  const ApplicationWidget({
-    super.key,
-  });
+  const ApplicationWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

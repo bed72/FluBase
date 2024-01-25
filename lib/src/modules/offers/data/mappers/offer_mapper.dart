@@ -1,6 +1,6 @@
 import 'package:ohh_ferta/src/modules/core/data/mappers/mapper.dart';
 
-import 'package:ohh_ferta/src/modules/offers/data/models/offers/offers_model.dart';
+import 'package:ohh_ferta/src/modules/offers/data/models/offers_model.dart';
 
 final class OfferMapper implements Mapper<List<OfferModel>> {
   @override

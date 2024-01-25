@@ -8,7 +8,7 @@ import 'package:ohh_ferta/src/application_widget.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  Modular.setInitialRoute('/offers/');
+  Modular.setInitialRoute('/home/');
 
   runApp(
     ModularApp(

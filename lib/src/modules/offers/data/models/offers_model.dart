@@ -1,4 +1,4 @@
-import 'package:ohh_ferta/src/modules/offers/domain/entities/offers/offers_entity.dart';
+import 'package:ohh_ferta/src/modules/offers/domain/entities/offers_entity.dart';
 
 class OfferModel {
   final String id;
