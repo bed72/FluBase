@@ -1,18 +1,20 @@
-import 'package:get_it/get_it.dart';
-
 import 'package:flutter/material.dart';
 
-import 'package:ohh_ferta/src/application_widget.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
-import 'package:ohh_ferta/src/common/routes/routes.dart';
-import 'package:ohh_ferta/src/common/resolvers/resolvers.dart';
+import 'package:ohh_ferta/src/application_module.dart';
+import 'package:ohh_ferta/src/application_widget.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  Resolvers(it: GetIt.instance);
+  Modular.setInitialRoute('/offers/');
 
   runApp(
-    ApplicationWidget(routerConfig: Routes.routerConfig),
+    ModularApp(
+      debugMode: true,
+      module: ApplicationModule(),
+      child: const ApplicationWidget(),
+    ),
   );
 }
