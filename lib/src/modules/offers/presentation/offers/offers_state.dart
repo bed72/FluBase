@@ -1,7 +1,8 @@
 import 'package:signals/signals_flutter.dart';
 
-import 'package:ohh_ferta/src/modules/offers/domain/entities/offers_entity.dart';
+import 'package:ohh_ferta/src/common/constants/constants.dart';
 
+import 'package:ohh_ferta/src/modules/offers/domain/entities/offers_entity.dart';
 import 'package:ohh_ferta/src/modules/offers/domain/usecases/get_all_offers_use_case.dart';
 
 class OffersState {
@@ -11,7 +12,7 @@ class OffersState {
   OffersState({required GetAllOffersUseCase useCase}) : _useCase = useCase;
 
   Future<void> call() async {
-    final response = await _useCase(collection: 'offers', null);
+    final response = await _useCase(path: basePath('/offers'));
 
     response.fold(
       (failure) => offers.set(AsyncError(failure, null)),

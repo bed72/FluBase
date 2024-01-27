@@ -2,7 +2,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import 'package:ohh_ferta/src/modules/offers/offers_module.dart';
 import 'package:ohh_ferta/src/modules/stores/stores_module.dart';
-import 'package:ohh_ferta/src/modules/favorites/favorites_module.dart';
+import 'package:ohh_ferta/src/modules/explore/explore_module.dart';
 import 'package:ohh_ferta/src/modules/home/presentation/screens/home_screen.dart';
 
 final class HomeModule extends Module {
@@ -23,8 +23,8 @@ final class HomeModule extends Module {
           transition: TransitionType.fadeIn,
         ),
         ModuleRoute(
-          '/favorites/',
-          module: FavotitesModule(),
+          '/explore/',
+          module: ExploreModule(),
           transition: TransitionType.fadeIn,
         ),
       ],

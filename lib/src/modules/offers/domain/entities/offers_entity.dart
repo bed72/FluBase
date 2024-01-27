@@ -30,8 +30,8 @@ class OfferEntity {
   }
 
   String get formatImage =>
-      '$baseURL/api/files/$collectionName/$id/${images.first}';
+      '$baseUrl/api/files/$collectionName/$id/${images.first}';
 
   String get formatThumb =>
-      '$baseURL/api/files/$collectionName/$id/${images.first}?thumb=100x300';
+      '$baseUrl/api/files/$collectionName/$id/${images.first}?thumb=100x300';
 }

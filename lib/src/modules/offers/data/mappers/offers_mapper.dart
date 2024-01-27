@@ -2,7 +2,7 @@ import 'package:ohh_ferta/src/modules/core/data/mappers/mapper.dart';
 
 import 'package:ohh_ferta/src/modules/offers/data/models/offers_model.dart';
 
-final class OfferMapper implements Mapper<List<OfferModel>> {
+final class OffersMapper implements ListMapper<List<OfferModel>> {
   @override
   List<OfferModel> call(List<dynamic> jsons) => jsons
       .map(

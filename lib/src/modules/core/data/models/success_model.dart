@@ -1,13 +1,13 @@
-import 'package:ohh_ferta/src/modules/core/domain/entities/pager/pager_entity.dart';
+import 'package:ohh_ferta/src/modules/core/domain/entities/success_entity.dart';
 
-class PagerModel {
+class SuccessModel {
   final int page;
   final int perPage;
   final int totalItems;
   final int totalPages;
   final List<dynamic> items;
 
-  PagerModel({
+  SuccessModel({
     required this.page,
     required this.items,
     required this.perPage,
@@ -15,7 +15,7 @@ class PagerModel {
     required this.totalPages,
   });
 
-  PagerEntity toEntity() => PagerEntity(
+  SuccessEntity toEntity() => SuccessEntity(
         page: page,
         items: items,
         perPage: perPage,

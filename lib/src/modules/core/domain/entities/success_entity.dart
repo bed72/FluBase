@@ -1,11 +1,11 @@
-class PagerEntity<T> {
+class SuccessEntity {
   final int page;
   final int perPage;
-  final List<T> items;
   final int totalItems;
   final int totalPages;
+  final List<dynamic> items;
 
-  PagerEntity({
+  SuccessEntity({
     required this.page,
     required this.items,
     required this.perPage,

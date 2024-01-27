@@ -7,7 +7,7 @@ import 'package:ohh_ferta/src/common/extensions/context_extension.dart';
 enum _Screens {
   offers(value: 0, path: '/home/offers/'),
   stores(value: 1, path: '/home/stores/'),
-  favorites(value: 2, path: '/home/favorites/');
+  explore(value: 2, path: '/home/explore/');
 
   final int value;
   final String path;
@@ -56,10 +56,10 @@ class _HomeScreenState extends State<HomeScreen> {
             selectedIcon: Icon(Icons.shopping_basket_rounded),
           ),
           NavigationDestination(
-            label: 'Favoritos',
-            tooltip: 'Seus favoritos',
-            selectedIcon: Icon(Icons.favorite),
-            icon: Icon(Icons.favorite_border_outlined),
+            label: 'Explore',
+            tooltip: 'Descubra novas lojas',
+            icon: Icon(Icons.explore_outlined),
+            selectedIcon: Icon(Icons.explore_rounded),
           ),
         ],
       ),
@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _onDestinationSelected(int index) {
     if (index == _Screens.offers.value) _navigateTo(_Screens.offers.path);
     if (index == _Screens.stores.value) _navigateTo(_Screens.stores.path);
-    if (index == _Screens.favorites.value) _navigateTo(_Screens.favorites.path);
+    if (index == _Screens.explore.value) _navigateTo(_Screens.explore.path);
 
     setState(() => screens = index);
   }
