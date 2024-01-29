@@ -1,10 +1,12 @@
-import 'package:ohh_ferta/src/modules/offers/domain/entities/offers_entity.dart';
+import 'package:intl/intl.dart';
+
+import 'package:ohh_ferta/src/common/constants/constants.dart';
 
 class OfferModel {
   final String id;
   final String name;
   final double price;
-  final String validate;
+  final DateTime validate;
   final String description;
   final String collectionName;
   final List<String> images;
@@ -21,14 +23,15 @@ class OfferModel {
     required this.categories,
   });
 
-  OfferEntity toEntity() => OfferEntity(
-        id: id,
-        name: name,
-        price: price,
-        validate: DateTime.parse(validate),
-        description: description,
-        collectionName: collectionName,
-        images: images,
-        categories: categories,
-      );
+  String get formatData {
+    final formatter = DateFormat('dd/MM/yy');
+
+    return formatter.format(validate);
+  }
+
+  String get formatImage =>
+      '$baseUrl/api/files/$collectionName/$id/${images.first}';
+
+  String get formatThumb =>
+      '$baseUrl/api/files/$collectionName/$id/${images.first}?thumb=100x300';
 }

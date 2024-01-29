@@ -1,16 +1,14 @@
 import 'package:either_dart/either.dart';
 
 import 'package:ohh_ferta/src/modules/core/data/mappers/mapper.dart';
-import 'package:ohh_ferta/src/modules/core/data/models/failure_model.dart';
-import 'package:ohh_ferta/src/modules/core/data/models/success_model.dart';
 
 import 'package:ohh_ferta/src/modules/core/external/options/http_options.dart';
 import 'package:ohh_ferta/src/modules/core/external/clients/http_client.dart';
 
-import 'package:ohh_ferta/src/modules/core/domain/entities/failure_entity.dart';
-import 'package:ohh_ferta/src/modules/core/domain/entities/success_entity.dart';
+import 'package:ohh_ferta/src/modules/core/data/models/failure_model.dart';
+import 'package:ohh_ferta/src/modules/core/data/models/success_model.dart';
 
-typedef RepositoryType = Either<FailureEntity, SuccessEntity>;
+typedef RepositoryType = Either<FailureModel, SuccessModel>;
 
 abstract interface class HttpRepository {
   Future<RepositoryType> call({
@@ -52,7 +50,7 @@ final class HttpRepositoryImpl implements HttpRepository {
     );
 
     return response
-        .map((success) => _success(success).toEntity())
-        .mapLeft((failure) => _failure(failure).toEntity());
+        .map((success) => _success(success))
+        .mapLeft((failure) => _failure(failure));
   }
 }

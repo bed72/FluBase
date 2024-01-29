@@ -5,7 +5,7 @@ import 'package:signals/signals_flutter.dart';
 import 'package:ohh_ferta/src/common/widgets/failure_widget.dart';
 import 'package:ohh_ferta/src/common/widgets/circular_progress_widget.dart';
 
-import 'package:ohh_ferta/src/modules/offers/domain/entities/offers_entity.dart';
+import 'package:ohh_ferta/src/modules/offers/data/models/offers_model.dart';
 
 import 'package:ohh_ferta/src/modules/offers/presentation/offers/offers_state.dart';
 import 'package:ohh_ferta/src/modules/offers/presentation/widgets/header/offers_header_widget.dart';
@@ -54,7 +54,7 @@ class _OffersScreenState extends State<OffersScreen> {
                 (_) => widget.state.offers.value.map(
                   loading: () => const CircularProgressWidget(),
                   error: (Object error, _) => FailureWidget(error: error),
-                  data: (List<OfferEntity> offers) => _offersWidget(offers),
+                  data: (List<OfferModel> offers) => _offersWidget(offers),
                 ),
               ),
             ],
@@ -64,7 +64,7 @@ class _OffersScreenState extends State<OffersScreen> {
     );
   }
 
-  Expanded _offersWidget(List<OfferEntity> offers) => Expanded(
+  Expanded _offersWidget(List<OfferModel> offers) => Expanded(
         child: ListView.separated(
           itemCount: offers.length,
           separatorBuilder: (_, __) => const Divider(),
