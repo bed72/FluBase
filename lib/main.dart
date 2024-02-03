@@ -13,6 +13,7 @@ Future<void> main() async {
   runApp(
     ModularApp(
       debugMode: true,
+      notAllowedParentBinds: true,
       module: ApplicationModule(),
       child: const ApplicationWidget(),
     ),

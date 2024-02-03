@@ -1,12 +1,11 @@
 import 'package:either_dart/either.dart';
 
 import 'package:ohh_ferta/src/modules/core/data/mappers/mapper.dart';
-
-import 'package:ohh_ferta/src/modules/core/external/options/http_options.dart';
-import 'package:ohh_ferta/src/modules/core/external/clients/http_client.dart';
-
 import 'package:ohh_ferta/src/modules/core/data/models/failure_model.dart';
 import 'package:ohh_ferta/src/modules/core/data/models/success_model.dart';
+
+import 'package:ohh_ferta/src/modules/core/external/clients/http_client.dart';
+import 'package:ohh_ferta/src/modules/core/external/options/http_options.dart';
 
 typedef RepositoryType = Either<FailureModel, SuccessModel>;
 

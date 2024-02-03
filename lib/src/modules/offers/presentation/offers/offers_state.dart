@@ -11,7 +11,8 @@ class OffersState {
   final OffersMapper _mapper;
   final HttpRepository _repository;
 
-  final offers = asyncSignal<List<OfferModel>>(AsyncLoading());
+  final _offers = asyncSignal<List<OfferModel>>(AsyncLoading());
+  AsyncSignal<List<OfferModel>> get offers => _offers;
 
   OffersState({
     required OffersMapper mapper,
@@ -23,8 +24,8 @@ class OffersState {
     final response = await _repository(path: basePath('/offers'));
 
     response.fold(
-      (failure) => offers.set(AsyncError(failure, null)),
-      (success) => offers.set(AsyncData(_mapper(success.items))),
+      (failure) => _offers.set(AsyncError(failure, null)),
+      (success) => _offers.set(AsyncData(_mapper(success.items))),
     );
   }
 }
