@@ -35,8 +35,9 @@ dependencies:
   intl: ^0.19.0
   signals: ^3.0.0
   either_dart: ^1.0.0
-  flutter_modular: ^6.3.2
+  ioc_container: ^2.0.1-beta
 
+  regex_router: ^2.0.2
   syncfusion_flutter_maps: ^24.1.47
 
   # The following adds the Cupertino Icons font to your application.
@@ -84,10 +85,10 @@ flutter:
   fonts:
     - family: Poppins
       fonts:
-        - asset: lib/src/common/themes/ttf/Poppins-Bold.ttf
-        - asset: lib/src/common/themes/ttf/Poppins-Medium.ttf
-        - asset: lib/src/common/themes/ttf/Poppins-Regular.ttf
-        - asset: lib/src/common/themes/ttf/Poppins-SemiBold.ttf
+        - asset: lib/src/presentation/themes/ttf/Poppins-Bold.ttf
+        - asset: lib/src/presentation/themes/ttf/Poppins-Medium.ttf
+        - asset: lib/src/presentation/themes/ttf/Poppins-Regular.ttf
+        - asset: lib/src/presentation/themes/ttf/Poppins-SemiBold.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
