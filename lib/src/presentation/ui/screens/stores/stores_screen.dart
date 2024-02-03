@@ -5,11 +5,8 @@ class StoresScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Lojas'),
-      ),
-      body: const SafeArea(
+    return const Scaffold(
+      body: SafeArea(
         child: Center(
           child: Text('Stores'),
         ),

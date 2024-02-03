@@ -14,6 +14,7 @@ class ApplicationScreen extends StatelessWidget {
     return MaterialApp(
       theme: Themes.light,
       themeMode: ThemeMode.light,
+      initialRoute: Routes.root.path,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: routes.generateRoute,
     );

@@ -3,26 +3,26 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 
 import 'package:ioc_container/ioc_container.dart';
-import 'package:ohh_ferta/src/data/mappers/offers/offers_mapper.dart';
 
 import 'package:ohh_ferta/src/external/clients/http_client_impl.dart';
 
+import 'package:ohh_ferta/src/domain/repositories/remote_repository.dart';
 import 'package:ohh_ferta/src/domain/models/responses/failure_model.dart';
 import 'package:ohh_ferta/src/domain/models/responses/success_model.dart';
-
-import 'package:ohh_ferta/src/domain/repositories/remote_repository.dart';
 
 import 'package:ohh_ferta/src/data/clients/http_client.dart';
 
 import 'package:ohh_ferta/src/data/mappers/mapper.dart';
+import 'package:ohh_ferta/src/data/mappers/offers/offers_mapper.dart';
 import 'package:ohh_ferta/src/data/mappers/responses/failure_mapper.dart';
 import 'package:ohh_ferta/src/data/mappers/responses/success_mapper.dart';
 
 import 'package:ohh_ferta/src/data/repositories/remote_repository_impl.dart';
+
 import 'package:ohh_ferta/src/presentation/ui/screens/offers/states/offers_state.dart';
 
-IocContainer get container {
-  log('BUILD');
+IocContainer get ioc {
+  log('-*- IOC CONTAINER -*-');
 
   final builder = IocContainerBuilder()
     ..add((_) => Dio(options))

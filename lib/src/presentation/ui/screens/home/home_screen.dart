@@ -8,12 +8,19 @@ import 'package:ohh_ferta/src/presentation/ui/screens/explore/explore_screen.dar
 import 'package:ohh_ferta/src/presentation/ui/screens/offers/offers_screen.dart';
 import 'package:ohh_ferta/src/presentation/ui/screens/offers/states/offers_state.dart';
 
+import 'package:ohh_ferta/src/presentation/ui/screens/home/widgets/header_widget.dart';
+
 class HomeScreen extends StatefulWidget {
   final OffersState offersState;
+
+  final void Function()? navigateToCreateStore;
+  final void Function()? navigateToNotifications;
 
   const HomeScreen({
     super.key,
     required this.offersState,
+    required this.navigateToCreateStore,
+    required this.navigateToNotifications,
   });
 
   @override
@@ -22,10 +29,12 @@ class HomeScreen extends StatefulWidget {
 
 class _NavigationBarScreenState extends State<HomeScreen> {
   int screens = 0;
+  bool hasAppBar = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: _handlerHeaderWidget(),
       body: <Widget>[
         OffersScreen(state: widget.offersState),
         const StoresScreen(),
@@ -60,4 +69,32 @@ class _NavigationBarScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+  PreferredSize? _handlerHeaderWidget() {
+    final widget = switch (screens) {
+      0 => _headerOffersWidget(),
+      1 => _headerStoresWidget(),
+      _ => null,
+    };
+
+    setState(() => widget);
+
+    return widget;
+  }
+
+  PreferredSize _headerStoresWidget() => const PreferredSize(
+        preferredSize: Size(double.infinity, 56),
+        child: HeaderWidget(title: 'Lojas'),
+      );
+
+  PreferredSize _headerOffersWidget() => PreferredSize(
+        preferredSize: const Size(double.infinity, 56),
+        child: HeaderWidget(
+          hasActions: true,
+          title: 'Bem vindo!',
+          hasNotification: true,
+          navigateToCreateStore: widget.navigateToCreateStore,
+          navigateToNotifications: widget.navigateToNotifications,
+        ),
+      );
 }

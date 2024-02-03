@@ -9,12 +9,14 @@ import 'package:ohh_ferta/src/presentation/ui/widgets/circular_progress_widget.d
 import 'package:ohh_ferta/src/presentation/ui/widgets/search/search_bar_widget.dart';
 
 import 'package:ohh_ferta/src/presentation/ui/screens/offers/states/offers_state.dart';
-import 'package:ohh_ferta/src/presentation/ui/screens/offers/widgets/offers_header_widget.dart';
 
 class OffersScreen extends StatefulWidget {
   final OffersState state;
 
-  const OffersScreen({super.key, required this.state});
+  const OffersScreen({
+    super.key,
+    required this.state,
+  });
 
   @override
   State<OffersScreen> createState() => _OffersScreenState();
@@ -31,13 +33,6 @@ class _OffersScreenState extends State<OffersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size(double.infinity, 56),
-        child: OffersHeaderWidget(
-          title: 'Bem vindo!',
-          hasNotification: true,
-        ),
-      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),

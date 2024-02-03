@@ -8,7 +8,7 @@ class Themes {
   static get systemWidgets => const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark,
-        systemNavigationBarColor: Color(0xFFFBFDF7), //Color(0x19006D39),
+        systemNavigationBarColor: Color(0xFFFBFDF7),
         systemNavigationBarIconBrightness: Brightness.dark,
       );
 
