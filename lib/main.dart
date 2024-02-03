@@ -5,15 +5,12 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:ohh_ferta/src/application_module.dart';
 import 'package:ohh_ferta/src/application_widget.dart';
 
-Future<void> main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
-  Modular.setInitialRoute('/home/coffee/bed?with=milk');
 
   runApp(
     ModularApp(
       debugMode: true,
-      notAllowedParentBinds: true,
       module: ApplicationModule(),
       child: const ApplicationWidget(),
     ),

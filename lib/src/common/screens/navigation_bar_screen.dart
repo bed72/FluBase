@@ -2,27 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'package:ohh_ferta/src/common/screens/screens.dart';
 import 'package:ohh_ferta/src/common/extensions/context_extension.dart';
 
-enum _Screens {
-  offers(value: 0, path: '/home/offers/'),
-  stores(value: 1, path: '/home/stores/'),
-  explore(value: 2, path: '/home/explore/');
-
-  final int value;
-  final String path;
-
-  const _Screens({required this.value, required this.path});
-}
-
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class NavigationBarScreen extends StatefulWidget {
+  const NavigationBarScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<NavigationBarScreen> createState() => _NavigationBarScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _NavigationBarScreenState extends State<NavigationBarScreen> {
   int screens = 0;
 
   @override
@@ -67,9 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _onDestinationSelected(int index) {
-    if (index == _Screens.offers.value) _navigateTo(_Screens.offers.path);
-    if (index == _Screens.stores.value) _navigateTo(_Screens.stores.path);
-    if (index == _Screens.explore.value) _navigateTo(_Screens.explore.path);
+    if (index == 0) _navigateTo(Screens.offers.path);
+    if (index == 1) _navigateTo(Screens.stores.path);
+    if (index == 2) _navigateTo(Screens.explore.path);
 
     setState(() => screens = index);
   }
