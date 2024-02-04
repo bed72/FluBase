@@ -13,10 +13,10 @@ class ApplicationScreen extends StatelessWidget {
 
     return MaterialApp(
       theme: Themes.light,
+      initialRoute: Routes.root,
       themeMode: ThemeMode.light,
-      initialRoute: Routes.root.path,
+      onGenerateRoute: onGenerateRoute,
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: routes.generateRoute,
     );
   }
 }

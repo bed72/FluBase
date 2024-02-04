@@ -1,16 +1,37 @@
-import 'package:regex_router/regex_router.dart';
+import 'package:flutter/material.dart';
 
-import 'package:ohh_ferta/src/presentation/ui/screens/home/routes/offer_routes.dart';
+import 'package:ohh_ferta/src/external/ioc/ioc.dart';
+import 'package:page_transition/page_transition.dart';
 
-enum Routes {
-  root(path: '/'),
-  notifications(path: '/notifications');
+import 'package:ohh_ferta/src/presentation/ui/screens/home/home_screen.dart';
+import 'package:ohh_ferta/src/presentation/ui/screens/offers/states/offers_state.dart';
+import 'package:ohh_ferta/src/presentation/ui/screens/notifications/notifications_screen.dart';
 
-  final String path;
-
-  const Routes({required this.path});
+abstract class Routes {
+  static const root = '/';
+  static const notifications = '/notifications';
 }
 
-final routes = RegexRouter.create({
-  ...offersRoutes(),
-});
+Route<dynamic> onGenerateRoute(RouteSettings settings) {
+  switch (settings.name) {
+    case Routes.root:
+      return PageTransition(
+        type: PageTransitionType.fade,
+        child: HomeScreen(offersState: ioc.get<OffersState>()),
+      );
+    case Routes.notifications:
+      return PageTransition(
+        child: const NotificationsScreen(),
+        type: PageTransitionType.rightToLeft,
+      );
+    default:
+      return PageTransition(
+        type: PageTransitionType.fade,
+        child: const Scaffold(
+          body: Center(
+            child: Text('Ops'),
+          ),
+        ),
+      );
+  }
+}

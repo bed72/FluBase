@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:ohh_ferta/src/presentation/extensions/context_extension.dart';
 
+import 'package:ohh_ferta/src/presentation/ui/routes/routes.dart';
 import 'package:ohh_ferta/src/presentation/ui/screens/stores/stores_screen.dart';
 import 'package:ohh_ferta/src/presentation/ui/screens/explore/explore_screen.dart';
 
@@ -13,14 +14,9 @@ import 'package:ohh_ferta/src/presentation/ui/screens/home/widgets/header_widget
 class HomeScreen extends StatefulWidget {
   final OffersState offersState;
 
-  final void Function()? navigateToCreateStore;
-  final void Function()? navigateToNotifications;
-
   const HomeScreen({
     super.key,
     required this.offersState,
-    required this.navigateToCreateStore,
-    required this.navigateToNotifications,
   });
 
   @override
@@ -93,8 +89,9 @@ class _NavigationBarScreenState extends State<HomeScreen> {
           hasActions: true,
           title: 'Bem vindo!',
           hasNotification: true,
-          navigateToCreateStore: widget.navigateToCreateStore,
-          navigateToNotifications: widget.navigateToNotifications,
+          navigateToCreateStore: () {},
+          navigateToNotifications: () =>
+              Navigator.pushNamed(context, Routes.notifications),
         ),
       );
 }
