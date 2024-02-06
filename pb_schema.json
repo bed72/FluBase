@@ -1,0 +1,291 @@
+[
+  {
+    "id": "o6z7ihxvyacim0m",
+    "name": "users",
+    "type": "auth",
+    "system": false,
+    "schema": [
+      {
+        "system": false,
+        "id": "t3ef3bng",
+        "name": "phone",
+        "type": "text",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "min": 11,
+          "max": 16,
+          "pattern": "^(?:\\+55)?(?:\\b|\\()?([1-9]{2})(?:\\)?|\\s)?(?:9[0-9]{4}[-\\s]?[0-9]{4}|[2-9][0-9]{3}[-\\s]?[0-9]{4})$"
+        }
+      },
+      {
+        "system": false,
+        "id": "td1zvhdi",
+        "name": "image",
+        "type": "file",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "mimeTypes": [
+            "image/jpeg",
+            "image/png"
+          ],
+          "thumbs": [],
+          "maxSelect": 1,
+          "maxSize": 5242880,
+          "protected": true
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {
+      "allowEmailAuth": false,
+      "allowOAuth2Auth": false,
+      "allowUsernameAuth": false,
+      "exceptEmailDomains": null,
+      "manageRule": null,
+      "minPasswordLength": 0,
+      "onlyEmailDomains": null,
+      "onlyVerified": false,
+      "requireEmail": false
+    }
+  },
+  {
+    "id": "1dmz9w5u3509ihu",
+    "name": "stores",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "system": false,
+        "id": "ylukn6k6",
+        "name": "name",
+        "type": "text",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "min": 4,
+          "max": 32,
+          "pattern": ""
+        }
+      },
+      {
+        "system": false,
+        "id": "cjul5ji3",
+        "name": "description",
+        "type": "editor",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "convertUrls": true
+        }
+      },
+      {
+        "system": false,
+        "id": "nifl45vd",
+        "name": "phone",
+        "type": "text",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "min": 11,
+          "max": 16,
+          "pattern": "^(?:\\+55)?(?:\\b|\\()?([1-9]{2})(?:\\)?|\\s)?(?:9[0-9]{4}[-\\s]?[0-9]{4}|[2-9][0-9]{3}[-\\s]?[0-9]{4})$"
+        }
+      },
+      {
+        "system": false,
+        "id": "2rfwsiix",
+        "name": "image",
+        "type": "file",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "mimeTypes": [
+            "image/png",
+            "image/jpeg"
+          ],
+          "thumbs": [],
+          "maxSelect": 1,
+          "maxSize": 5242880,
+          "protected": true
+        }
+      },
+      {
+        "system": false,
+        "id": "ssmwrbw9",
+        "name": "user",
+        "type": "relation",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "collectionId": "o6z7ihxvyacim0m",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  },
+  {
+    "id": "1amdpgs7ffedwjd",
+    "name": "offers",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "system": false,
+        "id": "ibg2zcvl",
+        "name": "name",
+        "type": "text",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "min": 4,
+          "max": 32,
+          "pattern": ""
+        }
+      },
+      {
+        "system": false,
+        "id": "jghhgn5t",
+        "name": "price",
+        "type": "number",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "min": 0.01,
+          "max": null,
+          "noDecimal": false
+        }
+      },
+      {
+        "system": false,
+        "id": "alccy4ug",
+        "name": "description",
+        "type": "editor",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "convertUrls": true
+        }
+      },
+      {
+        "system": false,
+        "id": "ye6clcqt",
+        "name": "validate",
+        "type": "date",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "min": "2024-01-01 12:00:00.000Z",
+          "max": "2070-01-01 12:00:00.000Z"
+        }
+      },
+      {
+        "system": false,
+        "id": "uzcymmwg",
+        "name": "images",
+        "type": "file",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "mimeTypes": [
+            "image/jpeg",
+            "image/png"
+          ],
+          "thumbs": [],
+          "maxSelect": 4,
+          "maxSize": 5242880,
+          "protected": false
+        }
+      },
+      {
+        "system": false,
+        "id": "2jqy4on9",
+        "name": "categories",
+        "type": "select",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "maxSelect": 2,
+          "values": [
+            "Hortifruti",
+            "Padaria",
+            "Açougue",
+            "Mercearia",
+            "Limpeza",
+            "Bebidas",
+            "Laticínios",
+            "Congelados",
+            "Higiene Pessoal",
+            "Produtos de Limpeza",
+            "Pet Shop",
+            "Dermocosméticos",
+            "Vitaminas e Suplementos",
+            "Cuidados com o Bebê",
+            "Produtos Naturais",
+            "Acessórios para Saúde",
+            "Primeiros Socorros",
+            "Produtos de Higiene Bucal",
+            "Ferramentas Agrícolas",
+            "Produtos para Jardinagem",
+            "Insumos para Pecuária",
+            "Equipamentos para Agropecuária",
+            "Produtos Agroquímicos",
+            "Fertilizantes"
+          ]
+        }
+      },
+      {
+        "system": false,
+        "id": "pcvuirmi",
+        "name": "store",
+        "type": "relation",
+        "required": true,
+        "presentable": true,
+        "unique": false,
+        "options": {
+          "collectionId": "1dmz9w5u3509ihu",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": null
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "options": {}
+  }
+]
