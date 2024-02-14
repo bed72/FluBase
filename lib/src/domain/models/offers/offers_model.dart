@@ -16,11 +16,11 @@ class OfferModel {
     required this.id,
     required this.name,
     required this.price,
+    required this.images,
     required this.validate,
+    required this.categories,
     required this.description,
     required this.collectionName,
-    required this.images,
-    required this.categories,
   });
 
   String get formatData {

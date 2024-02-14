@@ -10,7 +10,7 @@ typedef RemoteRepositoryType = Either<FailureModel, SuccessModel>;
 abstract interface class RemoteRepository {
   Future<RemoteRepositoryType> call({
     required String path,
-    Map<String, dynamic>? data,
+    Map<String, dynamic>? body,
     Map<String, dynamic>? query,
     Map<String, dynamic>? headers,
     Methods method = Methods.get,

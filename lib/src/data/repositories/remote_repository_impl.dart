@@ -22,14 +22,14 @@ final class RemoteRepositoryImpl implements RemoteRepository {
   @override
   Future<RemoteRepositoryType> call({
     required String path,
-    Map<String, dynamic>? data,
+    Map<String, dynamic>? body,
     Map<String, dynamic>? query,
     Map<String, dynamic>? headers,
     Methods method = Methods.get,
   }) async {
     final response = await _client(
       path: path,
-      data: data,
+      body: body,
       query: query,
       method: method,
       headers: headers,

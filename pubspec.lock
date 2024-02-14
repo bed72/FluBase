@@ -175,26 +175,26 @@ packages:
     dependency: "direct main"
     description:
       name: signals
-      sha256: "1e6339dfe9de893d17940c5dec846fd40920ecc0cb118feb324777d578c7a57f"
+      sha256: f27da712ff90c220246fd90df7a77a86d2cf3e6efc5493ef5a24ff76d89de074
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.3"
+    version: "4.2.2"
   signals_core:
     dependency: transitive
     description:
       name: signals_core
-      sha256: "74ad66c532292aff062ac706ef047112617f44858bc9680ae40e29f60f5b0b93"
+      sha256: a17fbee03b0af071c101e4bab5d5c286605d0942df4734203c26aabab046e0ad
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.3"
+    version: "4.2.0"
   signals_flutter:
     dependency: transitive
     description:
       name: signals_flutter
-      sha256: c20ba16d8e1d7251bd2043897a599da6c41a8dfad5cd2d401f60d3c664285f58
+      sha256: e017c099423b3ef990c01ec141cd76b282c5bc95bed0e5afd440ad82509c7a5f
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.3"
+    version: "4.2.2"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -236,18 +236,18 @@ packages:
     dependency: transitive
     description:
       name: syncfusion_flutter_core
-      sha256: ed8527189f874b9d07f78f2f4306739ce003e8baccfdd7453c0098beef16428f
+      sha256: e8580e201c7197feac830b501889e877796a9fabbe20dcdbe90a981603939101
       url: "https://pub.dev"
     source: hosted
-    version: "24.1.47"
+    version: "24.2.4"
   syncfusion_flutter_maps:
     dependency: "direct main"
     description:
       name: syncfusion_flutter_maps
-      sha256: "1273f1fe386c6d1f38aab82271e87354212595f0baa22c3787ddc364ced4194f"
+      sha256: "25ff602f2dc4c2b10146114daf45098ae28e32bdb371316fecc6d1dcf38df629"
       url: "https://pub.dev"
     source: hosted
-    version: "24.1.47"
+    version: "24.2.4"
   term_glyph:
     dependency: transitive
     description:

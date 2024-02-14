@@ -22,14 +22,14 @@ final class HttpClientImpl implements HttpClient {
   Future<HttpType> call({
     required String path,
     required Methods method,
-    Map<String, dynamic>? data,
+    Map<String, dynamic>? body,
     Map<String, dynamic>? query,
     Map<String, dynamic>? headers,
   }) async {
     try {
-      final response = await _http.request(
+      final Response(:data) = await _http.request(
         path,
-        data: data,
+        data: body,
         queryParameters: query,
         options: Options(
           headers: headers,
@@ -37,7 +37,7 @@ final class HttpClientImpl implements HttpClient {
         ),
       );
 
-      return Right(response.data);
+      return Right(data);
     } on DioException catch (failure) {
       return Left({'message': failure.message});
     } catch (_) {

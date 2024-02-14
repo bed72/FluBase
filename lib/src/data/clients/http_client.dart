@@ -8,7 +8,7 @@ abstract interface class HttpClient {
   Future<HttpType> call({
     required String path,
     required Methods method,
-    Map<String, dynamic>? data,
+    Map<String, dynamic>? body,
     Map<String, dynamic>? query,
     Map<String, dynamic>? headers,
   });
