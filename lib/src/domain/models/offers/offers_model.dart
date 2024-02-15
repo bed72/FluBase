@@ -23,11 +23,8 @@ class OfferModel {
     required this.collectionName,
   });
 
-  String get formatData {
-    final formatter = DateFormat('dd/MM/yy');
-
-    return formatter.format(validate);
-  }
+  String get formatData =>
+      'Válido até ${DateFormat('dd MMMM').format(validate)}';
 
   String get formatImage =>
       '$baseUrl/api/files/$collectionName/$id/${images.first}';

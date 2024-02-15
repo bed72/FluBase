@@ -10,7 +10,7 @@ class NotificationsScreen extends StatelessWidget {
         title: const Text('Notificações'),
       ),
       body: const Center(
-        child: Text('...'),
+        child: Text('Notification'),
       ),
     );
   }

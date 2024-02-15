@@ -21,23 +21,30 @@ class SearchBarWidget extends StatefulWidget {
 class _SearchBarWidgetState extends State<SearchBarWidget> {
   @override
   Widget build(BuildContext context) {
-    return SearchAnchor(
-      viewElevation: 0,
-      isFullScreen: false,
-      viewHintText: widget.viewHintText,
-      dividerColor: Colors.transparent,
-      viewLeading: const Icon(Icons.search),
-      headerTextStyle: context.fonts.bodySmall,
-      headerHintStyle: context.fonts.bodyMedium!.copyWith(
-        color: context.colors.onSurface.withOpacity(0.8),
+    return SizedBox(
+      height: 42.0,
+      child: SearchAnchor(
+        viewElevation: 0,
+        isFullScreen: false,
+        viewHintText: widget.viewHintText,
+        dividerColor: Colors.transparent,
+        headerTextStyle: context.fonts.bodySmall,
+        viewLeading: Icon(
+          Icons.search,
+          color: context.colors.onSurface.withOpacity(0.8),
+        ),
+        headerHintStyle: context.fonts.bodySmall?.copyWith(
+          color: context.colors.onSurface.withOpacity(0.8),
+        ),
+        viewShape: ContinuousRectangleBorder(
+          borderRadius: const BorderRadius.all(Radius.circular(16)),
+          side: BorderSide(color: context.colors.onBackground.withOpacity(0.6)),
+        ),
+        builder: (_, SearchController controller) =>
+            _searchBarWidget(controller),
+        suggestionsBuilder: (_, SearchController controller) =>
+            widget.items(controller),
       ),
-      viewShape: ContinuousRectangleBorder(
-        borderRadius: const BorderRadius.all(Radius.circular(16)),
-        side: BorderSide(color: context.colors.onBackground.withOpacity(0.6)),
-      ),
-      builder: (_, SearchController controller) => _searchBarWidget(controller),
-      suggestionsBuilder: (_, SearchController controller) =>
-          widget.items(controller),
     );
   }
 
