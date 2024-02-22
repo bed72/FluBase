@@ -37,7 +37,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
           color: context.colors.onSurface.withOpacity(0.8),
         ),
         viewShape: ContinuousRectangleBorder(
-          borderRadius: const BorderRadius.all(Radius.circular(16)),
+          borderRadius: const BorderRadius.all(Radius.circular(16.0)),
           side: BorderSide(color: context.colors.onBackground.withOpacity(0.6)),
         ),
         builder: (_, SearchController controller) =>
@@ -70,7 +70,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
       ),
       shape: MaterialStateProperty.all(
         const ContinuousRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(16)),
+          borderRadius: BorderRadius.all(Radius.circular(16.0)),
         ),
       ),
     );

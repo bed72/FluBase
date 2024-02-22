@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ohh_ferta/src/presentation/extensions/context_extension.dart';
 
 import 'package:signals/signals_flutter.dart';
 
@@ -54,9 +55,19 @@ class _OffersScreenState extends State<OffersScreen> {
                         hintText: 'Procure pelas melhores oferta',
                       ),
                     ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.filter_list_rounded),
+                    const SizedBox(width: 6.0),
+                    Container(
+                      padding: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(8.0)),
+                        border: Border.all(
+                          color: context.colors.onSurface.withOpacity(0.8),
+                        ),
+                      ),
+                      child: InkWell(
+                          onTap: () {},
+                          child: const Icon(Icons.filter_list_rounded)),
                     ),
                   ],
                 ),
