@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:ohh_ferta/src/presentation/extensions/context_extension.dart';
+import 'package:ohh_ferta/src/presentation/ui/widgets/border/border_widget.dart';
 
 class SearchBarWidget extends StatefulWidget {
-  final String hintText;
   final String viewHintText;
   final List<Widget> Function(SearchController controller) items;
 
   const SearchBarWidget({
     super.key,
     required this.items,
-    required this.hintText,
     required this.viewHintText,
   });
 
@@ -19,15 +18,45 @@ class SearchBarWidget extends StatefulWidget {
 }
 
 class _SearchBarWidgetState extends State<SearchBarWidget> {
+  int _currentIndex = 0;
+  int _currentCharIndex = 0;
+
+  final List<String> _strings = [
+    "As melhores ofertas",
+    "Você encontra aqui...",
+  ];
+
+  void startTypewriter() {
+    if (mounted) {
+      setState(() {
+        if (_currentCharIndex < _strings[_currentIndex].length) {
+          _currentCharIndex++;
+        } else {
+          _currentIndex = (_currentIndex + 1) % _strings.length;
+          _currentCharIndex = 0;
+        }
+      });
+    }
+
+    Future.delayed(const Duration(milliseconds: 256), () => startTypewriter());
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    startTypewriter();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 42.0,
       child: SearchAnchor(
         viewElevation: 0,
-        isFullScreen: false,
-        viewHintText: widget.viewHintText,
+        isFullScreen: true,
         dividerColor: Colors.transparent,
+        viewHintText: widget.viewHintText,
         headerTextStyle: context.fonts.bodySmall,
         viewLeading: Icon(
           Icons.search,
@@ -37,7 +66,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
           color: context.colors.onSurface.withOpacity(0.8),
         ),
         viewShape: ContinuousRectangleBorder(
-          borderRadius: const BorderRadius.all(Radius.circular(16.0)),
+          borderRadius: biggerBorderRadius,
           side: BorderSide(color: context.colors.onBackground.withOpacity(0.6)),
         ),
         builder: (_, SearchController controller) =>
@@ -51,7 +80,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
   SearchBar _searchBarWidget(SearchController controller) {
     return SearchBar(
       controller: controller,
-      hintText: widget.hintText,
+      hintText: _strings[_currentIndex].substring(0, _currentCharIndex),
       leading: const Icon(Icons.search),
       onTap: () => controller.openView(),
       onChanged: (_) => controller.openView(),
@@ -69,9 +98,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
         ),
       ),
       shape: MaterialStateProperty.all(
-        const ContinuousRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(16.0)),
-        ),
+        const ContinuousRectangleBorder(borderRadius: biggerBorderRadius),
       ),
     );
   }

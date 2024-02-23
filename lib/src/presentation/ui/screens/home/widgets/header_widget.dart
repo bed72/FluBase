@@ -25,7 +25,7 @@ class HeaderWidget extends StatelessWidget {
       title: Text(
         title,
         style:
-            context.fonts.headlineSmall!.copyWith(fontWeight: FontWeight.w600),
+            context.fonts.headlineSmall!.copyWith(fontWeight: FontWeight.w500),
       ),
       actions: !hasActions
           ? null

@@ -11,7 +11,7 @@ final class OffersMapper implements ListMapper<List<OfferModel>> {
           name: json['name'],
           price: json['price'],
           description: json['description'],
-          collectionName: json['collectionName'],
+          thumbnail: json['collectionName'],
           images: List<String>.from(json['images']),
           validate: DateTime.parse(json['validate']),
           categories: List<String>.from(json['categories']),

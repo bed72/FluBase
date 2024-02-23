@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ohh_ferta/src/presentation/extensions/context_extension.dart';
 
 import 'package:signals/signals_flutter.dart';
 
@@ -7,7 +6,10 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'package:ohh_ferta/src/domain/models/offers/offers_model.dart';
 
+import 'package:ohh_ferta/src/presentation/extensions/context_extension.dart';
+
 import 'package:ohh_ferta/src/presentation/ui/widgets/failure_widget.dart';
+import 'package:ohh_ferta/src/presentation/ui/widgets/border/border_widget.dart';
 import 'package:ohh_ferta/src/presentation/ui/widgets/circular_progress_widget.dart';
 import 'package:ohh_ferta/src/presentation/ui/widgets/search/search_bar_widget.dart';
 
@@ -52,15 +54,13 @@ class _OffersScreenState extends State<OffersScreen> {
                       child: SearchBarWidget(
                         items: _itemsWidget,
                         viewHintText: 'Algo em mente?',
-                        hintText: 'Procure pelas melhores oferta',
                       ),
                     ),
                     const SizedBox(width: 6.0),
                     Container(
                       padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(8.0)),
+                        borderRadius: normalBorderRadius,
                         border: Border.all(
                           color: context.colors.onSurface.withOpacity(0.8),
                         ),
@@ -91,15 +91,13 @@ class _OffersScreenState extends State<OffersScreen> {
 
   List<ListTile> _itemsWidget(SearchController controller) {
     return List<ListTile>.generate(
-      50,
+      6,
       (int index) {
         final String item = 'item $index';
         return ListTile(
           title: Text(item),
           onTap: () {
-            setState(() {
-              controller.closeView(item);
-            });
+            setState(() => controller.closeView(item));
           },
         );
       },
