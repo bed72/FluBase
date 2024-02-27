@@ -44,10 +44,13 @@ class _OfferWidgetState extends State<OfferWidget> {
               children: [
                 ClipRRect(
                   borderRadius: normalBorderRadius,
-                  child: ImageWidget(
-                    url: widget.offer.getImage,
-                    width: (context.dimensions.width - 48) / 2,
-                    height: (context.dimensions.width - 48) / 2,
+                  child: Hero(
+                    tag: widget.offer.id,
+                    child: ImageWidget(
+                      url: widget.offer.getImage,
+                      width: (context.dimensions.width - 48) / 2,
+                      height: (context.dimensions.width - 48) / 2,
+                    ),
                   ),
                 ),
                 Container(

@@ -24,8 +24,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       );
     case Routes.offer:
       return PageTransition(
+        type: PageTransitionType.fade,
         child: OfferScreen(id: settings.arguments as String),
-        type: PageTransitionType.rightToLeft,
       );
     case Routes.notifications:
       return PageTransition(

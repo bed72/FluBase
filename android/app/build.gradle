@@ -22,14 +22,19 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+def flutterVersionNdk = localProperties.getProperty('flutter.ndkVersion')
+if (flutterVersionNdk == null) {
+    flutterVersionNdk = '25.1.8937393'
+}
+
 def flutterVersionMinSdk = localProperties.getProperty('flutter.versionMinSdk')
 if (flutterVersionMinSdk == null) {
     flutterVersionMinSdk = '28'
 }
 
 android {
+    ndkVersion flutterVersionNdk
     namespace "com.bed.ohh_ferta"
-    ndkVersion flutter.ndkVersion
     compileSdkVersion flutter.compileSdkVersion
 
     compileOptions {
@@ -46,11 +51,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.bed.ohh_ferta"
         versionName flutterVersionName
-        minSdkVersion flutter.minSdkVersion
+        applicationId "com.bed.ohh_ferta"
+        targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
-        targetSdkVersion flutterVersionMinSdk.toInteger()
+        minSdkVersion flutterVersionMinSdk.toInteger()
     }
 
     buildTypes {

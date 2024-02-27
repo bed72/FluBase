@@ -33,7 +33,7 @@ class _NavigationBarScreenState extends State<HomeScreen> {
       appBar: _handlerHeaderWidget(),
       body: <Widget>[
         OffersScreen(state: widget.offersState),
-        const StoresScreen(),
+        StoresScreen(),
         const ExploreScreen(),
       ][screens],
       bottomNavigationBar: NavigationBar(
